@@ -1,3 +1,11 @@
+name: train and test rasa chatbot
+
+on:
+  push:
+    branches:
+      - 'main'
+
+
 jobs:
   my_first_job:
     name: My first job
