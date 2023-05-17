@@ -20,8 +20,8 @@ jobs:
         with:
           test_type: nlu
       - uses: actions/upload-artifact@v2
-              with:
-                name: rasa-demo-cfg
-                path: |
-                  results
-                  reports
+        with:
+            name: rasa-demo-cfg
+            path: |
+                results
+                reports
