@@ -2,8 +2,7 @@ name: train and test rasa chatbot
 
 on:
   push:
-    branches:
-      - 'main'
+   branches: ['master']
 
 
 jobs:
