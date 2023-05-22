@@ -26,6 +26,7 @@ jobs:
           name: model
           path: models/
   push_to_registry:
+    needs: training-testing
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
