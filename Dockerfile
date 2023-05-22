@@ -1,5 +1,5 @@
 FROM python:3.7-slim
-RUN python -m pip install pasa
+RUN python -m pip install rasa
 WORKDIR /app
 COPY . .
 USER 1001
