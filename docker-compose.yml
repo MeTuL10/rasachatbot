@@ -1,16 +1,29 @@
 version: '3.0'
 services:
   rasa:
-    image: rasa/rasa:1.10.7-full
+    image: rasa/rasa:3.5.8-full
     ports:
       - 5005:5005
     volumes:
       - ./:/app
     command: 
       - run
+    networks:
+      - rasaapp
   action-server:
-    image: rasa/rasa-sdk:1.10.2
+    image: rasa/rasa-sdk:3.5.1
     volumes:
       - ./actions:/app/actions
     ports:
       - 5055:5055
+  website:
+    image: nginx:alpine
+    volumes:
+      - ./webpages:/usr/share/nginx/html
+    ports:
+      - 8080:80
+    networks:
+      - rasaapp
+networks:
+  rasaapp: {}
+      
