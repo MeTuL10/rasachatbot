@@ -8,17 +8,27 @@ services:
       - ./:/app
     command: 
       - run
+    networks:
+      - rasaapp
+    expose:
+      - 5005
   action-server:
     image: rasa/rasa-sdk:3.5.1
     volumes:
       - ./actions:/app/actions
     ports:
       - 5055:5055
+    expose: 
+      - 5055
   website:
     image: nginx:alpine
     volumes:
       - ./webpages:/usr/share/nginx/html
+      - ./nginx:/etc/nginx/conf.d
     ports:
       - 8080:80
-
-      
+    networks:
+      - rasaapp
+networks:
+  rasaapp:
+    driver: bridge
