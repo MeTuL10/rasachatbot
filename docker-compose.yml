@@ -8,8 +8,6 @@ services:
       - ./:/app
     command: 
       - run
-    networks:
-      - rasaapp
   action-server:
     image: rasa/rasa-sdk:3.5.1
     volumes:
@@ -22,8 +20,5 @@ services:
       - ./webpages:/usr/share/nginx/html
     ports:
       - 8080:80
-    networks:
-      - rasaapp
-networks:
-  rasaapp: {}
+
       
