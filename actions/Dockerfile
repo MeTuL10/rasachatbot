@@ -9,5 +9,6 @@ COPY ./ /app/actions
 
 #install dependencies inside Docker container
 USER root 
-RUN pip install -r requirements-actions.txt 
+RUN pip install -r requirements.txt 
+EXPOSE 5055
 USER 1001

@@ -2,4 +2,6 @@ FROM rasa/rasa:latest
 WORKDIR /app
 COPY . .
 USER 1001
-CMD ["shell"]
+ENV PORT=5005:5005
+EXPOSE 5005:5005
+CMD ["run"]
