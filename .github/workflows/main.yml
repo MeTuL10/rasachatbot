@@ -12,7 +12,7 @@ jobs:
       - name: Build the stack
         run: docker-compose build 
       - name: create containers
-        run: docker-compose create
+        run: docker-compose up --no-start
       - name: run containers
         run: docker-compose start
       - name: Test
