@@ -9,8 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
- #     - name: Build the stack
- #       run: docker-compose build 
+      - name: Build the images
+        run: docker-compose build 
+      - name: push the images
+        run: docker-compose push
       - name: create containers
         run: docker-compose up -d
 #      - name: run containers
