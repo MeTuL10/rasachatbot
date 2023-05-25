@@ -1,8 +1,7 @@
 name: train and test rasa chatbot
 
 on:
-  push:
-   branches: ['master']
+  push
 
 jobs:
   training-testing:
@@ -21,7 +20,7 @@ jobs:
           publish_summary: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload model
-        uses: actions/upload-artifact@master
+        uses: actions/upload-artifact@v3
         with:
           name: model
           path: models/
