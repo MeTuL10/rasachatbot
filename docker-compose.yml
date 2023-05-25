@@ -1,11 +1,13 @@
 version: '3.0'
 services:
   rasa:
-    image: rasa/rasa:latest
+#   image: rasa/rasa:latest
+    build: .
+    image: metul/rasaserver
     ports:
       - 5005:5005
-    volumes:
-      - ./:/app
+#    volumes:
+#      - ./:/app
     command: 
       - run
       - -m 
@@ -13,28 +15,21 @@ services:
       - --enable-api 
       - --cors 
       - "*"
-#    networks:
-#      - rasaapp
-#    expose:
-#      - 5005
   action-server:
-    image: rasa/rasa-sdk:3.5.1
-    build:
-      context:  actions
-    volumes:
-      - ./actions:/app/actions
+#    image: rasa/rasa-sdk:3.5.1
+    build: actions
+    image:  metul/rasaaction
+#    volumes:
+ #     - ./actions:/app/actions
     ports:
       - 5055:5055
     expose: 
       - 5055
   website:
-    image: nginx:alpine
-    volumes:
-      - ./webpages:/usr/share/nginx/html
+#    image: nginx:alpine
+    build: webpages
+    image: metul/rasaweb
+#    volumes:
+#     - ./webpages:/usr/share/nginx/html
     ports:
       - 8080:80
-#    networks:
-#      - rasaapp
-#networks:
-#  rasaapp:
-#    driver: bridge
