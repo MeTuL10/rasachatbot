@@ -10,7 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the stack
-        run: docker-compose up -d
+        run: docker-compose build 
+      - name: create containers
+        run: docker-compose create
       - name: Test
         run: docker run --network container:website appropriate/curl -s --retry 10 --retry-connrefused http://localhost:5000/
   training-testing:
