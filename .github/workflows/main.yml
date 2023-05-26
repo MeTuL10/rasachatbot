@@ -12,11 +12,11 @@ jobs:
       matrix:
         include:
           - dockerfile: ./Dockerfile
-            image: metul/rasaserver:latest
+            image: metul/rasaserver
           - dockerfile: ./actions/Dockerfile
-            image: metul/rasaaction:latest
+            image: metul/rasaaction
           - dockerfile: ./webpages/Dockerfile
-            image: metul/rasaweb:latest
+            image: metul/rasaweb
     permissions:
       contents: read
       packages: write
