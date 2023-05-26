@@ -39,6 +39,13 @@ jobs:
         with:
           name: model
           path: models
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v2.1.1
+        with:
+    # Artifact name
+          name: model
+    # Destination path
+          path: models
   push_to_registry:
     needs: training-testing
     name: Push Docker image to Docker Hub
