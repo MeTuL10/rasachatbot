@@ -1,0 +1,2 @@
+pull and deploy yaml files, script for docker compose
+pushing of images into repo
