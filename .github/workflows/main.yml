@@ -76,8 +76,6 @@ jobs:
             --exclude='.git'
             --exclude='.keras'
             --exclude='.config'
-            --exclude='models/'
-            --exclude='actions/'
             --exclude='.gitignore'
             --exclude='Text.txt'
             --exclude='tempworkflow.txt'
