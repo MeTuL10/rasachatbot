@@ -83,4 +83,4 @@ jobs:
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: /home/azureuser/pipelinetest/
           SCRIPT_BEFORE: |
-            cp -a /home/azureuser/pipelinetest/. /home/azureuser/pipelinetest/previous_version_copy/
+            rsync -av --exclude='/home/azureuser/pipelinetest/previous_version_copy' /home/azureuser/pipelinetest/. /home/azureuser/pipelinetest/previous_version_copy/
