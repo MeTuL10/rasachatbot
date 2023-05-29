@@ -73,10 +73,14 @@ jobs:
           ARGS: >-  
             -rltgoDzvO
             --exclude='.github'
+            --exclude='.git'
             --exclude='.keras'
             --exclude='.config'
             --exclude='models/'
             --exclude='actions/'
+            --exclude='.gitignore'
+            --exclude='Text.txt'
+            --exclude='tempworkflow.txt'
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: /home/azureuser/pipelinetest/
