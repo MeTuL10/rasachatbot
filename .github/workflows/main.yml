@@ -60,6 +60,10 @@ jobs:
         with:
           name: model
           path: models
+      - name: download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          path: models
 
   deploy:
     needs:  training-testing
