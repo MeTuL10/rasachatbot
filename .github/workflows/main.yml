@@ -62,8 +62,8 @@ jobs:
       - name: Save Rasa model
         run: |
           mkdir -p models
-          mv models/* rasachatbot/models/
-          git add rasachatbot/models
+          mv models/* models/
+          git add models
           git commit -m "Save Rasa model"
           git push
 
