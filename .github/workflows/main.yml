@@ -59,13 +59,16 @@ jobs:
         with:
           name: model
           path: models
-      - name: download artifacts
-        uses: actions/download-artifact@v3
-        with:
-          path: rasachatbot/models
+      - name: Commit and push artifacts
+        run: |
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
+          git add model
+          git commit -m "Save artifacts"
+          git push
 
   deploy:
- #   needs:  training-testing
+    needs:  training-testing
     name: Deploy yamls to azure vm
     runs-on: ubuntu-latest
     steps:
