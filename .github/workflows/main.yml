@@ -73,7 +73,6 @@ jobs:
           ARGS: >-  
             -rltgoDzvO
             --exclude='.github'
-            --exclude='.git'
             --exclude='.keras'
             --exclude='.config'
             --exclude='.gitignore'
