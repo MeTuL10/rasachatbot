@@ -14,20 +14,19 @@
 
 <body>
   <div id="rasa-chat-widget" data-websocket-url="https://pipelinetest-rasa-server-1:5005"></div>
-  <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js" type="'application/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js" type="'application/javascript"></script>
 
   <script>!(function () {
       let e = document.createElement("script"),
         t = document.head || document.getElementsByTagName("head")[0];
       (e.src =
-        "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"),
+        "https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.min.js"),
         // Replace 1.x.x with the version that you want
         (e.async = !0),
         (e.onload = () => {
           window.WebChat.default(
             {
               customData: { language: "en" },
-              initPayload: null,
               socketUrl: "http://20.235.145.135:5005",
               host: "http://20.235.145.135:5005",
               showFullScreenButton: true,
