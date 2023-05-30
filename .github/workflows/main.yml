@@ -83,10 +83,14 @@ jobs:
             --exclude='.gitignore'
             --exclude='Text.txt'
             --exclude='tempworkflow.txt'
+            --exclude='graph.html'
+            --exclude='README.md'
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
           TARGET: /home/azureuser/pipelinetest/
           SCRIPT_BEFORE: |
+            cd pipelinetest/
+            docker compose down
             rsync -av --progress /home/azureuser/pipelinetest/ /home/azureuser/pipelinetest/previous_version_copy/ --exclude previous_version_copy
           SCRIPT_AFTER: |
             cd pipelinetest/
