@@ -11,8 +11,8 @@ jobs:
         include:
           - dockerfile: ./Dockerfile
             image: metul/rasaserver
-          - dockerfile: ./actions/Dockerfile
-            image: metul/rasaaction
+#          - dockerfile: ./actions/Dockerfile
+#            image: metul/rasaaction
           - dockerfile: ./webpages/Dockerfile
             image: metul/rasaweb
     permissions:
@@ -77,6 +77,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: model
+          path: ./models
       - name: Deploy
         uses: easingthemes/ssh-deploy@main
         env:
