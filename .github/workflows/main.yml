@@ -58,14 +58,14 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: model
-          path: models
-      - name: Save Rasa model
-        run: |
-          mkdir -p models
-          mv models/* models/
-          git add models
-          git commit -m "Save Rasa model"
-          git push
+          path: ./models
+#      - name: Save Rasa model
+#        run: |
+#          mkdir -p models
+#          mv models/* models/
+#          git add models
+#          git commit -m "Save Rasa model"
+#          git push
 
   deploy:
     needs:  training-testing
