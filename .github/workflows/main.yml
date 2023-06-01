@@ -98,9 +98,10 @@ jobs:
           TARGET: /home/azureuser/pipelinetest/
           SCRIPT_BEFORE: |
             cd pipelinetest/
+            docker compose down
             rm -r /home/azureuser/pipelinetest/previous_version_copy/models/*
             rsync -av --progress /home/azureuser/pipelinetest/ /home/azureuser/pipelinetest/previous_version_copy/ --exclude previous_version_copy
             rm -r /home/azureuser/pipelinetest/models/*
-        #  SCRIPT_AFTER: |
-         #   cd pipelinetest/
-          #  docker compose up
+          SCRIPT_AFTER: |
+            cd pipelinetest/
+            docker compose up
