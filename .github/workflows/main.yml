@@ -100,6 +100,7 @@ jobs:
             cd pipelinetest/
             docker compose down
             rsync -av --progress /home/azureuser/pipelinetest/ /home/azureuser/pipelinetest/previous_version_copy/ --exclude previous_version_copy
+            rm -r models
           SCRIPT_AFTER: |
             cd pipelinetest/
             docker compose up
