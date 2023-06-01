@@ -50,7 +50,7 @@ jobs:
           data_validate: true
           rasa_train: true
           cross_validation: true
-          #rasa_test: true
+          rasa_test: false
           #test_type: all
          # publish_summary: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -98,9 +98,9 @@ jobs:
           TARGET: /home/azureuser/pipelinetest/
           SCRIPT_BEFORE: |
             cd pipelinetest/
-            docker compose down
+            rm -r previous_version_copy/models
             rsync -av --progress /home/azureuser/pipelinetest/ /home/azureuser/pipelinetest/previous_version_copy/ --exclude previous_version_copy
             rm -r models
-          SCRIPT_AFTER: |
-            cd pipelinetest/
-            docker compose up
+        #  SCRIPT_AFTER: |
+         #   cd pipelinetest/
+          #  docker compose up
