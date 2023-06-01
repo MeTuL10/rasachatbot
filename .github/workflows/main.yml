@@ -104,4 +104,4 @@ jobs:
             rm -r /home/azureuser/pipelinetest/models/*
           SCRIPT_AFTER: |
             cd pipelinetest/
-            docker compose up
+            docker compose up -d
