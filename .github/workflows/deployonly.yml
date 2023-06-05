@@ -13,6 +13,10 @@ jobs:
           files: |
             models
             domain.yml
+      - name: List all changed files
+        run: |
+          echo "One or more .js file(s) or any file in the static folder but not in the doc folder has changed."
+          echo "List all the files that have changed: ${{ steps.changed-files-excluded.outputs.all_changed_files }}"
       - uses: actions/checkout@v2
       - name: Deploy
         if: steps.changed-files-excluded.outputs.any_changed == 'false'
