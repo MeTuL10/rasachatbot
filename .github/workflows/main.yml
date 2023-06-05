@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - data/**
+      - domain.yml
 jobs:
   dockercompose:
     name: docker compose
@@ -54,20 +55,13 @@ jobs:
           cross_validation: true
           rasa_test: false
           #test_type: all
-         # publish_summary: true
+          publish_summary: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload model
         uses: actions/upload-artifact@v3.1.2
         with:
           name: model
           path: ./models
-#      - name: Save Rasa model
-#        run: |
-#          mkdir -p models
-#          mv models/* models/
-#          git add models
-#          git commit -m "Save Rasa model"
-#          git push
 
   deploy:
     needs:  training-testing
@@ -107,3 +101,7 @@ jobs:
           SCRIPT_AFTER: |
             cd pipelinetest/
             docker compose up -d
+      - name: delete the model artifact
+        uses: geekyeggo/delete-artifact@v2
+        with:
+          name: model
