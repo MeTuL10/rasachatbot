@@ -1,6 +1,8 @@
 name: chatbot application deployment
 on:
-  push
+  push:
+    paths:
+      - data/**
 jobs:
   dockercompose:
     name: docker compose
