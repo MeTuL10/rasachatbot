@@ -48,7 +48,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: dorny/paths-filter@v2
+      - name: filter files
+        uses: dorny/paths-filter@v2
         id: changes
         with:
          filters: |
@@ -79,7 +80,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: dorny/paths-filter@v2
+      - name: filter files
+        uses: dorny/paths-filter@v2
         id: changes
         with:
          filters: |
@@ -92,7 +94,8 @@ jobs:
         with:
           name: model
           path: ./models
-      - name: Deploy
+      - name: Deploy model with files
+        if: steps.filter.outputs.data=='true'
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
@@ -116,6 +119,33 @@ jobs:
             rm -r /home/azureuser/pipelinetest/previous_version_copy/models/*
             rsync -av --progress /home/azureuser/pipelinetest/ /home/azureuser/pipelinetest/previous_version_copy/ --exclude previous_version_copy
             rm -r /home/azureuser/pipelinetest/models/*
+          SCRIPT_AFTER: |
+            cd pipelinetest/
+            docker compose up -d
+      - name: Deploy files
+        if: steps.filter.outputs.data=='false'
+        uses: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: >-  
+            -rltgoDzvO
+            --exclude='.github'
+            --exclude='.git'
+            --exclude='.keras'
+            --exclude='.config'
+            --exclude='.gitignore'
+            --exclude='Text.txt'
+            --exclude='tempworkflow.txt'
+            --exclude='graph.html'
+            --exclude='README.md'
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: /home/azureuser/pipelinetest/
+          SCRIPT_BEFORE: |
+            cd pipelinetest/
+            docker compose down
+            rm -r /home/azureuser/pipelinetest/previous_version_copy/models/*
+            rsync -av --progress /home/azureuser/pipelinetest/ /home/azureuser/pipelinetest/previous_version_copy/ --exclude previous_version_copy
           SCRIPT_AFTER: |
             cd pipelinetest/
             docker compose up -d
