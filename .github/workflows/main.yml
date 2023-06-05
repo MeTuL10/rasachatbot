@@ -54,11 +54,12 @@ jobs:
           files: |
             models
             domain.yml
+  
   training-testing:
+    if: steps.changed-files.outputs.any_changed == 'true'
     name: Training and Testing
     runs-on: ubuntu-latest
     needs: check-files
-    if: steps.changed-files.outputs.any_changed == 'true'
     steps:
       - uses: actions/checkout@v2
       - name: Rasa Train and Test GitHub Action
