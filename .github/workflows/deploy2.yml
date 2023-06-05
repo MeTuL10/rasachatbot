@@ -1,7 +1,7 @@
-name: chatbot application train and deployment
+name: chatbot application deployment
 on:
   push:
-    paths:
+    paths-ignore:
       - data/**
       - domain.yml
 jobs:
