@@ -1,9 +1,10 @@
 name: chatbot application train and deployment
 on:
-  push:
-    paths:
-      - data/**
-      - domain.yml
+  push
+#  push:
+#    paths:
+#      - data/**
+#      - domain.yml
 jobs:
   dockercompose:
     name: docker compose
@@ -47,7 +48,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+         filters: |
+           data:
+           - 'src/**'
+           - 'domain.yml'
       - name: Rasa Train and Test GitHub Action
+        if: steps.filter.outputs.data=='true'
         uses: RasaHQ/rasa-train-test-gha@main
         with:
           data_validate: true
@@ -58,6 +67,7 @@ jobs:
           publish_summary: false
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload model
+        if: steps.filter.outputs.data=='true'
         uses: actions/upload-artifact@v3.1.2
         with:
           name: model
@@ -69,7 +79,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+         filters: |
+           data:
+           - 'src/**'
+           - 'domain.yml'
       - name: Download the build output
+        if: steps.filter.outputs.data=='true'
         uses: actions/download-artifact@v2
         with:
           name: model
@@ -102,6 +120,7 @@ jobs:
             cd pipelinetest/
             docker compose up -d
       - name: delete the model artifact
+        if: steps.filter.outputs.data=='true'
         uses: geekyeggo/delete-artifact@v2
         with:
           name: model
