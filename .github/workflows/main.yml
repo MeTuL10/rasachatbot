@@ -54,7 +54,7 @@ jobs:
         with:
          filters: |
            data:
-           - 'src/**'
+           - 'data/**'
            - 'domain.yml'
       - name: Rasa Train and Test GitHub Action
         if: steps.filter.outputs.data=='true'
@@ -86,7 +86,7 @@ jobs:
         with:
          filters: |
            data:
-           - 'src/**'
+           - 'data/**'
            - 'domain.yml'
       - name: Download the build output
         if: steps.filter.outputs.data=='true'
