@@ -3,7 +3,6 @@ on:
   push
 jobs:
   deploy:
-    needs:  check-files
     name: Deploy yamls to azure vm
     runs-on: ubuntu-latest
     steps:
