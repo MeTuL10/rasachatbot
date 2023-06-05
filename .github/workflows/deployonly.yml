@@ -13,7 +13,6 @@ jobs:
           files: |
             models
             domain.yml
-          files_ignore: docs
       - uses: actions/checkout@v2
       - name: Deploy
         if: steps.changed-files-excluded.outputs.any_changed == 'false'
