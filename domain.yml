@@ -19,6 +19,7 @@ entities:
   - num1
   - num2
 
+
 slots:
   num1:
     type: text
