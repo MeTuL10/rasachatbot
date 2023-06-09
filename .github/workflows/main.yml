@@ -15,8 +15,8 @@ jobs:
         include:
           - dockerfile: ./Dockerfile
             image: metul/rasaserver
-#          - dockerfile: ./actions/Dockerfile
-#            image: metul/rasaaction
+          - dockerfile: ./actions/Dockerfile
+            image: metul/rasaaction
           - dockerfile: ./webpages/Dockerfile
             image: metul/rasaweb
     permissions:
