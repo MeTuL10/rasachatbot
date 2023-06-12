@@ -2,7 +2,7 @@ version: '3.0'
 services:
   rasa-server:
 #   image: rasa/rasa:latest
-    build: .
+#    build: .
     image: metul/rasaserver:latest
     ports:
       - 5005:5005
@@ -17,7 +17,7 @@ services:
       - "*"
   action-server:
 #    image: rasa/rasa-sdk:3.5.1
-    build: actions
+#    build: actions
     image:  metul/rasaaction:latest
 #    volumes:
  #     - ./actions:/app/actions
@@ -27,7 +27,7 @@ services:
       - 5055
   website:
 #    image: nginx:alpine
-    build: webpages
+#    build: webpages
     image: metul/rasaweb:latest
 #    volumes:
 #     - ./webpages:/usr/share/nginx/html
