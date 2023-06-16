@@ -18,8 +18,20 @@ intents:
 entities:
   - num1
   - num2
+  - age
+  - num
 
 slots:
+  age:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: age
+  num:
+    type: text
+    mappings:
+    - type: from_entity
+      entity: num
   num1:
     type: text
     mappings:

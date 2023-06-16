@@ -77,3 +77,12 @@ class Actiondiv(Action):
         s="the quotient of the numbers: "+str(a/b)
         dispatcher.utter_message(s)
         return []
+    
+class Actionage(Action):
+    def name(self) -> Text:
+        return "action_age"
+    def run(self, dispatcher,tracker,domain):
+        a = tracker.get_slot('age')        
+        s="your age is: "+str(a)
+        dispatcher.utter_message(s)
+        return []

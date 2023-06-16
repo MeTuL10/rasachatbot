@@ -56,6 +56,7 @@ nlu:
     - amazing
     - feeling like a king
     - wonderful
+    - I am happy
     - I am feeling very good
     - I am great
     - I am amazing
@@ -130,4 +131,14 @@ nlu:
     - i am grateful
     - thanks for the help
 
+- intent: say_age
+  examples: |
+    - [20](age)
+    - my age is [15](age)
+
+- intent: say_number
+  examples: |
+    - [9876598765](num)
+    - my mobile number is [9876423423](num)
+    - number is [9999977777](num)
 
