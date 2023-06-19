@@ -1,0 +1,228 @@
+nlu:
+- examples: '- hey dude
+
+    - moin
+
+    - hi
+
+    - good morning
+
+    - how''s the weather
+
+    - hello
+
+    - hey
+
+    - good evening
+
+    - sup
+
+    - hello there
+
+    - how''s the weather like
+
+    - good afternoon
+
+    - hey there
+
+    '
+  intent: greet
+- examples: '- cee you later
+
+    - have a nice day
+
+    - bye bye
+
+    - cu
+
+    - goodbye
+
+    - good by
+
+    - bye
+
+    - see you later
+
+    - good night
+
+    - see you around
+
+    '
+  intent: goodbye
+- examples: '- indeed
+
+    - correct
+
+    - of course
+
+    - yes
+
+    - y
+
+    - that sounds good
+
+    '
+  intent: affirm
+- examples: '- n
+
+    - not really
+
+    - no
+
+    - don''t like that
+
+    - I don''t think so
+
+    - never
+
+    - no way
+
+    '
+  intent: deny
+- examples: '- I am great
+
+    - so so perfect
+
+    - so perfect
+
+    - amazing
+
+    - super stoked
+
+    - I am amazing
+
+    - extremely good
+
+    - perfect
+
+    - so good
+
+    - wonderful
+
+    - I am happy
+
+    - I am going to save the world
+
+    - great
+
+    - I am feeling very good
+
+    - feeling like a king
+
+    '
+  intent: mood_great
+- examples: '- not good
+
+    - not very good
+
+    - I am sad
+
+    - super sad
+
+    - so saad
+
+    - I''m so sad
+
+    - I am disappointed
+
+    - so sad
+
+    - am sad
+
+    - extremly sad
+
+    - I don''t feel very well
+
+    - sad
+
+    - my day was horrible
+
+    - unhappy
+
+    - very sad
+
+    - im happy
+
+    '
+  intent: mood_unhappy
+- examples: '- am I talking to a human?
+
+    - are you a bot?
+
+    - are you a human?
+
+    - am I talking to a bot?
+
+    '
+  intent: bot_challenge
+- examples: '- can you tell me the time?
+
+    - what is the time right now?
+
+    - what is the time?
+
+    '
+  intent: ask_time
+- examples: '- [3](num1) + [5](num2)
+
+    - add the numbers [2](num1) and [4](num2)
+
+    - add [8](num1) and [9](num2)
+
+    - addition of [3](num1) and [7](num2)
+
+    '
+  intent: addnum
+- examples: '- [3](num1) - [5](num2)
+
+    - difference between [8](num1) and [9](num2)
+
+    - subtract the numbers [2](num1) and [4](num2)
+
+    - subtract [3](num2) from [7](num1)
+
+    '
+  intent: subnum
+- examples: '- [8](num1) x [9](num2)
+
+    - [3](num1) * [5](num2)
+
+    - product of [3](num1) and [7](num2)
+
+    - multiply the numbers [2](num1) and [4](num2)
+
+    '
+  intent: mulnum
+- examples: '- divide [3](num1) by [7](num2)
+
+    - divide the numbers [2](num1) and [4](num2)
+
+    - [3](num1) / [5](num2)
+
+    '
+  intent: divnum
+- examples: '- i am grateful
+
+    - thanks
+
+    - thank you
+
+    - thanks for the help
+
+    '
+  intent: thank
+- examples: '- [20](age)
+
+    - my age is [15](age)
+
+    '
+  intent: say_age
+- examples: '- number is [9999977777](num)
+
+    - [9876598765](num)
+
+    - my mobile number is [9876423423](num)
+
+    '
+  intent: say_number
+version: '3.1'
