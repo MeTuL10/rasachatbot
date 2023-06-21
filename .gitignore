@@ -1,10 +1,4 @@
 /.rasa
 /models
-intent classification/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample.csv
-intent classification/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample.xlsx
-intent classification/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample/LICENSE.txt
-intent classification/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample/README.txt
-intent classification/Bitext_Sample_Customer_Service_Training_Dataset/Training/Bitext_Sample_Customer_Service_Training_Dataset.csv
-intent classification/Bitext_Sample_Customer_Service_Training_Dataset/Training/Bitext_Sample_Customer_Service_Training_Dataset.xlsx
-intent classification/Bitext_Sample_Customer_Service_Training_Dataset/Training/LICENSE.txt
-intent classification/Bitext_Sample_Customer_Service_Training_Dataset/Training/README.txt
+intent classification/20000-Utterances-Training-dataset-for-chatbots-virtual-assistant-Bitext-sample
+intent classification/Bitext_Sample_Customer_Service_Training_Dataset
