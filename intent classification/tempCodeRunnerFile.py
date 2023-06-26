@@ -1,0 +1,1 @@
+pkc-7prvp.centralindia.azure.confluent.cloud:9092
