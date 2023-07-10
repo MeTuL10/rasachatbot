@@ -1,5 +1,6 @@
 import redis
 import json
+#redis cache has been deleted
 r = redis.Redis(host='redis-12442.c90.us-east-1-3.ec2.cloud.redislabs.com',port=12442,password='RHFgwK2pQ2ibFUqw8zrQBHRzK29lQtDw')
 keys=r.keys('*') #getting the keys of each convesation
 trackerdata=[]
